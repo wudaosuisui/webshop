@@ -1,0 +1,9 @@
+body{
+background-image:url(../img/bg1.jpg);
+background-position:right;
+}
+#body{
+	width:250px;
+	background-image:url(../img/tbg.png);
+	padding:50px;
+}

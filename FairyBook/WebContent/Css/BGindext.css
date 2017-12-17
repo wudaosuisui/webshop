@@ -1,0 +1,19 @@
+body{
+background-image:url(../img/bg.jpg);
+background-position:center;
+}
+#bookShowTable{
+	width:800px;
+	background-image:url(../img/tbg.png);
+	padding:30px;
+}
+
+#head{
+	height:100px;
+}
+#headline{
+	height:30px;
+	background-image:url(../img/tbg.png);
+	padding-left: 800px;
+	padding-top: 10px;
+}

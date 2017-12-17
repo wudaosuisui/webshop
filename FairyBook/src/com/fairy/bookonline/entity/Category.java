@@ -6,18 +6,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
-@Table(name="Catgory")
+@Table(name="Category")
 public class Category {
 	
 	private int id ;//流水号
 	private String name;//类别名
 	
-	//构造
 	public Category() {}
+	
+	public Category(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public Category(String name) {
+		this.name = name;
+	}
+
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(generator="my_gen")
+    @GenericGenerator(name="my_gen", strategy="increment")
 	public int getId() {
 		return id;
 	}
@@ -33,6 +45,5 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	
 }

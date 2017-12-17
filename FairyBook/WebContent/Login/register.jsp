@@ -6,15 +6,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>register</title>
 </head>
+<link rel="stylesheet" type="text/css" href="../Css/adminLogin.css">
 <body>
-<form action="../user/register">
-loginName:<br/>
-<input type="text" name="loginName" ><br/>
-password:<br/>
-<input type="password" name="password" ><br/>
-passwordAgain:<br/>
-<input type="password" name="password2" ><br/>
-<input type="submit" vlalue="注册">
+<br><br>
+<h1>There is Register Page!</h1>
+<div id="body">
+<form action="../user/register" method = "post">
+登陆账号:<br/>
+<input type="text" name="loginName" value = "user6"><br/>
+密码:<br/>
+<input type="password" name="password" value="123" ><br/>
+再次输入密码:<br/>
+<input type="password" name="password2" value="123"><br/>
+昵称:<br/>
+<input type="text" name="name" value="user5name"><br/>
+签名：(20字以内)<br>
+<input type="text" name="slogan" value="I'm user5!!!" >
+<br/>${errorinfo }<br>
+<input type="submit" value="注册">
 </form>
+</div>
 </body>
 </html>

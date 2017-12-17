@@ -1,0 +1,44 @@
+body{
+	background-image:url(../img/bg1.jpg);
+	background-position:right;
+}
+table{
+	background-image:url(../img/tbg.png);
+}
+.show{
+	height:280px;
+	width:220px;
+	float: left;
+	border:1px dashed gray;
+}
+#head{
+	height:200px;
+}
+#headtitle{
+	height: 30px;
+	padding-left: 800px;
+	padding-top: 10px;
+	background-image:url(../img/tbg.png); 
+}
+#body{
+	background-image:url(../img/tbg.png);
+}
+#page{
+	padding-left: 500px;
+	border:1px dashed gray;
+}
+#floor{
+	background-image:url(../img/fbg.png);
+	height:150px;
+	text-align:center;
+	padding-top: 10px;
+}
+#JS{
+	height:500px;
+	width:250px;
+}
+#show{
+	height:100%;
+	width:100%;
+	font: normal bold '仿宋';
+}
