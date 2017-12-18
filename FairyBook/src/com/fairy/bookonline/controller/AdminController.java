@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fairy.bookonline.entity.Admin;
+import com.fairy.bookonline.entity.Page;
 import com.fairy.bookonline.service.AdminServiceImpl;
 import com.fairy.bookonline.service.BookServiceImpl;
 
@@ -27,9 +28,11 @@ public class AdminController {
 	@RequestMapping("/login")
 	public String Login(@RequestParam("loginName") String loginName,
 			@RequestParam("password") String password,
-			HttpServletRequest request) {
+			HttpServletRequest request,HttpSession session) {
 		Admin admin = new Admin(loginName,password);
 		if(this.adminServiceImpl.login(admin, request)) {//登陆成功 admin 已经存入session（http）
+			Page page1 = new Page(1,12);
+			session.setAttribute("page", page1);
 			this.bookServiceImpl.getList(request);//book 存入session（http）
 			return "BackGround/indext";
 		}else {

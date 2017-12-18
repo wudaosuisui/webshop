@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.fairy.bookonline.entity.Admin" %>
 <%@ page import="com.fairy.bookonline.entity.Book" %>
+<%@ page import="com.fairy.bookonline.entity.Page" %>
 <%@ page import ="java.util.List" %>
 <%@ page import = " java.util.ArrayList" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="../Css/BGindext.css">
 <body>
 <%Admin admin = (Admin)session.getAttribute("admin");
+
 if(admin!=null){
 //创建bookList(nunll)
 List<Book> bookList = new ArrayList<Book>();
@@ -51,6 +53,19 @@ for(Book book : bookList){ %>
 i++;}//循环图书信息的for 
 %>
 </table><br>
+<div id="page">
+<%
+Page page1 = (Page)session.getAttribute("page");
+%>
+	<a href="../book/changePageNum?pageN=<%=page1.getCurrentPageNum()-1 %>">上一页</a>
+	&nbsp;&nbsp;&nbsp;
+	<%
+	for(int j =0 ;j<page1.getTotalPageNum();j++){
+	%>
+	<a href="../book/changePageNum?pageN=<%=j+1 %>"><%=j+1 %></a>&nbsp;&nbsp;&nbsp;
+	<%} %>
+	<a href="../book/changePageNum?pageN=<%=page1.getCurrentPageNum()+1 %>">下一页</a>
+	</div>
 <h2><a href="../book/addpage">添加图书</a></h2><!-- 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 <h2><a href="../BackGround/addCategory.jsp">添加图书种类</a></h2>
